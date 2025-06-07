@@ -1,17 +1,16 @@
-﻿namespace Entity.Model
-{
-    public class Reserva : BaseEntity
-    {
-        public int ClienteId { get; set; }
-        public int VehiculoId { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
-        public decimal MontoTotal { get; set; }
-        public EstadoReserva Estado { get; set; }
-        public string Observaciones { get; set; }
+﻿using Entity.Model;
 
-        // Navegación
-        public virtual Cliente Cliente { get; set; }
-        public virtual Vehiculo Vehiculo { get; set; }
-    }
+public class Reserva : BaseEntity
+{
+    public int ClienteId { get; set; }
+    public int VehiculoId { get; set; }
+    public DateTime FechaInicio { get; set; }
+    public DateTime FechaFin { get; set; }
+    public decimal MontoTotal { get; set; }
+    public string Estado { get; set; } = "Pendiente"; // Pendiente, Confirmada, EnCurso, Completada, Cancelada
+    public string? Observaciones { get; set; }
+
+    // Navegación
+    public virtual Cliente Cliente { get; set; } = null!;
+    public virtual Vehiculo Vehiculo { get; set; } = null!;
 }

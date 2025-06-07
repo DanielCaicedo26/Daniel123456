@@ -7,13 +7,21 @@ using System.Threading.Tasks;
 
 namespace Entity.Dtos
 {
-    public class CreateReservaDto
+    public class ReservaCreateDto
     {
-       
+        [Required]
         public int ClienteId { get; set; }
-        public int VehiculoId { get; set; }  
+
+        [Required]
+        public int VehiculoId { get; set; }
+
+        [Required]
         public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }   
-        public string Observaciones { get; set; }
+
+        [Required]
+        public DateTime FechaFin { get; set; }
+
+        public string? Observaciones { get; set; }
     }
+
 }

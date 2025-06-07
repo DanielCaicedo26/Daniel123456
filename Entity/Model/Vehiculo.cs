@@ -1,18 +1,16 @@
-﻿namespace Entity.Model
-{
-    public class Vehiculo : BaseEntity
-    {
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public int Año { get; set; }
-        public string Placa { get; set; }
-        public TipoVehiculo Tipo { get; set; }
-        public decimal PrecioPorDia { get; set; }
-        public bool Disponible { get; set; } = true;
-        public string Color { get; set; }
-        public int Kilometraje { get; set; }
+﻿using Entity.Model;
 
-        // Navegación
-        public virtual ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
-    }
+public class Vehiculo : BaseEntity
+{
+    public string Marca { get; set; } = string.Empty;
+    public string Modelo { get; set; } = string.Empty;
+    public int Año { get; set; }
+    public string Placa { get; set; } = string.Empty;
+    public string Color { get; set; } = string.Empty;
+    public string Tipo { get; set; } = string.Empty; // Sedan, SUV, Hatchback, etc.
+    public decimal PrecioPorDia { get; set; }
+    public bool EstaDisponible { get; set; } = true;
+
+    // Navegación
+    public virtual ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
 }
