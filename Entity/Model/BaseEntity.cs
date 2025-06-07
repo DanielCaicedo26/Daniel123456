@@ -6,5 +6,7 @@
         public DateTime FechaCreacion { get; set; }
         public DateTime? FechaModificacion { get; set; }
         public bool Activo { get; set; } = true;
+
+        public bool EsActivo => Activo;
     }
 }

@@ -65,9 +65,9 @@ public class ApplicationDbContext : DbContext
         });
 
         // Filtros globales para borrado lógico
-        modelBuilder.Entity<Cliente>().HasQueryFilter(e => e.EsActivo);
-        modelBuilder.Entity<Vehiculo>().HasQueryFilter(e => e.EsActivo);
-        modelBuilder.Entity<Reserva>().HasQueryFilter(e => e.EsActivo);
+        modelBuilder.Entity<Cliente>().HasQueryFilter(e => e.Activo);
+        modelBuilder.Entity<Vehiculo>().HasQueryFilter(e => e.Activo);
+        modelBuilder.Entity<Reserva>().HasQueryFilter(e => e.Activo);
     }
 
     public override int SaveChanges()
